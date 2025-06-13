@@ -51,3 +51,8 @@ def handle_message(event):
         result = result_logic.get(key, "❗ ยังไม่ตรงกับรางวัลใดโดยเฉพาะ")
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result))
         user_state.pop(user_id)
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))  # fallback 10000
+    app.run(host="0.0.0.0", port=port)
