@@ -5,7 +5,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import os
 
 app = Flask(__name__)
-line_bot_api = LineBotApi(os.getenv("ACCESS_TOKEN"))
+line_bot_api = LineBotApi(os.getenv("CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("CHANNEL_SECRET"))
 
 user_state = {}
